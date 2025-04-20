@@ -1,1 +1,14 @@
-this is the event view!
+All Events
+<% @events.each do |event| %>
+<div>
+    <%= event.title %>
+</div>
+<div>
+    <%= event.location %>
+</div>
+<div>
+    <%= event.body %>
+</div>
+<div>
+    <%= event.attendances%>
+</div>
