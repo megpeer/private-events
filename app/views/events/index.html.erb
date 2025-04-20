@@ -1,0 +1,12 @@
+<h2>EVENTS</h2>
+<div>
+    <h3>Create New Event:</h3>
+    <%= render "form" %>
+</div>
+
+<div>
+    <h3>Upcoming Events:</h3>
+    <%= turbo_frame_tag "events" do %>
+    <%= render @events %>
+    <% end %>
+</div>

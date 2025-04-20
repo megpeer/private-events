@@ -1,0 +1,24 @@
+<%= form_with model: @event do |event| %>
+    <% if event.object.errors.any? %>
+<div>
+    <p><%= pluralize(event.object.errors.count, "error") %></p>
+    the following errors have prohibited this event from being saved:<br>
+    <ul>
+        <%= event.object.errors.each do |error| %>
+        <li>
+            <%= error.full_message %>
+        </li>
+        <% end %>
+    </ul>
+
+    </p>
+    </div>
+ <% end %>   
+ <div>
+    <%= event.text_area :title, placeholder: "title" %><br>
+    <%= event.text_area :location, placeholder: "location" %><br>
+    <%= event.text_area :body, placeholder: "message" %><br>
+    <%= event.submit "create event"%><br>
+<div>
+<% end %>
+
