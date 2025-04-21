@@ -4528,3 +4528,200 @@ Processing by EventsController#create as TURBO_STREAM
 Completed 200 OK in 29ms (Views: 0.8ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.2ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Started GET "/" for ::1 at 2025-04-21 16:04:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.0ms | GC: 0.1ms)
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:10
+  Rendered collection of events/_event.html.erb [2 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | GC: 0.1ms)
+Completed 200 OK in 58ms (Views: 12.2ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2025-04-21 16:08:44 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:10
+  Rendered collection of events/_event.html.erb [2 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 3.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-04-21 17:15:42 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.4ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>EVENTS</h2>
+<% if user_signed_in? %>
+
+
+
+<div>
+    <p>
+    welcome, <%= current_user.username %>
+    </p>
+    <h3>Create New Event:</h3>
+    <%= render "form" %>
+</div>
+
+<div>
+    <h3>Upcoming Events:</h3>
+    <%= turbo_frame_tag "events" do %>
+    <%= render @events %>
+    <% end %>
+    <% else %>
+    <div>
+        <%= link_to "sign in", new_user_session_path %> % to create and attend events!!
+    </div>
+</div>
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/mpeer/Documents/repos/private-events/app/views/events/index.html.erb:25: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>EVENTS</h2>
+<% if user_signed_in? %>
+
+
+
+<div>
+    <p>
+    welcome, <%= current_user.username %>
+    </p>
+    <h3>Create New Event:</h3>
+    <%= render "form" %>
+</div>
+
+<div>
+    <h3>Upcoming Events:</h3>
+    <%= turbo_frame_tag "events" do %>
+    <%= render @events %>
+    <% end %>
+    <% else %>
+    <div>
+        <%= link_to "sign in", new_user_session_path %> % to create and attend events!!
+    </div>
+</div>
+):
+1:    <h2>EVENTS</h2>
+2:    <% if user_signed_in? %>
+3:    
+4:    
+5:    
+6:    <div>
+7:        <p>
+8:        welcome, <%= current_user.username %>
+9:        </p>
+10:        <h3>Create New Event:</h3>
+11:        <%= render "form" %>
+12:    </div>
+13:    
+14:    <div>
+15:        <h3>Upcoming Events:</h3>
+16:        <%= turbo_frame_tag "events" do %>
+17:        <%= render @events %>
+18:        <% end %>
+19:        <% else %>
+20:        <div>
+21:            <%= link_to "sign in", new_user_session_path %> % to create and attend events!!
+22:        </div>
+23:    </div>
+  
+app/views/events/index.html.erb:25: syntax error, unexpected end-of-input, expecting `end' or dummy end
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/mpeer/Documents/repos/private-events/app/views/events/index.html.erb:25: syntax error, unexpected end-of-input, expecting `end' or dummy end
+          end
+             ^
+):
+  
+app/views/events/index.html.erb:25: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/favicon.ico" for ::1 at 2025-04-21 17:15:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2025-04-21 17:17:26 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-04-21 17:17:47 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 2.3ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 1.7ms)
+Completed 200 OK in 26ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-21 17:17:48 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.1ms)
+Completed 200 OK in 48ms (Views: 7.0ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/password/new" for ::1 at 2025-04-21 17:17:50 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-04-21 17:17:51 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.7ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.5ms)
+Completed 200 OK in 38ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-21 17:18:25 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 2.8ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-04-21 17:18:39 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.1ms)
+Completed 200 OK in 26ms (Views: 3.2ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.5ms)
+
+

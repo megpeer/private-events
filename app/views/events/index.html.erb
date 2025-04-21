@@ -1,5 +1,12 @@
 <h2>EVENTS</h2>
+<% if user_signed_in? %>
+
+
+
 <div>
+    <p>
+    welcome, <%= current_user.username %>
+    </p>
     <h3>Create New Event:</h3>
     <%= render "form" %>
 </div>
@@ -8,5 +15,13 @@
     <h3>Upcoming Events:</h3>
     <%= turbo_frame_tag "events" do %>
     <%= render @events %>
+<%= button_to "sign out", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+
     <% end %>
+
+    <% else %>
+    <div>
+        <%= link_to "log in", new_user_session_path %> to create and attend events
+    </div>
 </div>
+<% end %>
