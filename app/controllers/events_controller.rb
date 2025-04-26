@@ -4,6 +4,10 @@ class EventsController < ApplicationController
     @events = Event.all.order(created_at: :desc)
   end
 
+  def show
+    @event = Event.find(params[id])
+  end
+
   def create
     @event = Event.new(event_params)
     @event.user = current_user
