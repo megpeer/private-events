@@ -9780,3 +9780,360 @@ Processing by EventsController#index as HTML
 Completed 200 OK in 43ms (Views: 5.1ms | ActiveRecord: 0.3ms (4 queries, 1 cached) | GC: 0.4ms)
 
 
+Started GET "/events/2" for ::1 at 2025-04-26 17:08:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 2 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  Rendered events/show.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 2.2ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Migrating to CreateAttendances (20250427210645)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250427210645') RETURNING "version" /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='PrivateEvents'*/[0m
+Migrating to AddUserRefToAttendances (20250427210945)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at")
+                     SELECT "id","attendee","attended_event","created_at","updated_at" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at")
+                     SELECT "id","attendee","attended_event","created_at","updated_at" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250427210945') RETURNING "version" /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='PrivateEvents'*/[0m
+Migrating to AddEventRefToAttendances (20250427211041)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_title_id" ON "aattendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1eea297922"
+FOREIGN KEY ("title_id")
+  REFERENCES "titles" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Migrating to AddEventRefToAttendances (20250427211041)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_title_id" ON "aattendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1eea297922"
+FOREIGN KEY ("title_id")
+  REFERENCES "titles" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Migrating to AddEventRefToAttendances (20250427211041)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_title_id" ON "aattendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1eea297922"
+FOREIGN KEY ("title_id")
+  REFERENCES "titles" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Migrating to AddEventRefToAttendances (20250427211041)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_title_id" ON "aattendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1eea297922"
+FOREIGN KEY ("title_id")
+  REFERENCES "titles" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Migrating to AddEventRefToAttendances (20250427211041)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_title_id" ON "aattendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "title_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_1eea297922"
+FOREIGN KEY ("title_id")
+  REFERENCES "titles" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_title_id" ON "attendances" ("title_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id","title_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","title_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Migrating to AddEventRefToAttendances (20250427211041)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "event_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_event_id" ON "attendances" ("event_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aattendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "event_id" integer NOT NULL) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_event_id" ON "aattendances" ("event_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aattendances_on_user_id" ON "aattendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aattendances" ("id","attendee","attended_event","created_at","updated_at","user_id","event_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","event_id" FROM "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "attendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "attendee" varchar, "attended_event" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL, "event_id" integer NOT NULL, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_777eb7170a"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+) /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id") /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_event_id" ON "attendances" ("event_id") /*application='PrivateEvents'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "attendances" ("id","attendee","attended_event","created_at","updated_at","user_id","event_id")
+                     SELECT "id","attendee","attended_event","created_at","updated_at","user_id","event_id" FROM "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aattendances" /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0 /*application='PrivateEvents'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1 /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250427211041') RETURNING "version" /*application='PrivateEvents'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='PrivateEvents'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
