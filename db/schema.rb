@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_27_211041) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_12_211108) do
   create_table "attendances", force: :cascade do |t|
-    t.string "attendee"
-    t.string "attended_event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.integer "event_id", null: false
-    t.index ["event_id"], name: "index_attendances_on_event_id"
-    t.index ["user_id"], name: "index_attendances_on_user_id"
+    t.integer "attendee_id", null: false
+    t.integer "attended_event_id", null: false
+    t.index ["attended_event_id"], name: "index_attendances_on_attended_event_id"
+    t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -29,6 +27,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_27_211041) do
     t.string "location"
     t.text "body"
     t.integer "user_id", null: false
+    t.date "date"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -46,7 +45,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_27_211041) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "attendances", "events"
-  add_foreign_key "attendances", "users"
+  add_foreign_key "attendances", "events", column: "attended_event_id"
+  add_foreign_key "attendances", "users", column: "attendee_id"
   add_foreign_key "events", "users"
 end

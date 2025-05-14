@@ -1,9 +1,10 @@
 <div>
     <p>
         <%= link_to event.title, event, data: {turbo_frame: "_top"} %><br>
-        <%# Event: <%= event.title %>
+        Event: <%= event.title %>
+        Date: <%= event.date %>
         Host: <%= event.user.username %>
-        <%# Location: <%= event.location %>
-        <%# Info: <%= event.body %>
+        Location: <%= event.location %>
+        Info: <%= event.body %>
     </p>
 </div>

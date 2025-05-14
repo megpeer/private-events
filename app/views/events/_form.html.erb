@@ -16,7 +16,9 @@
  <% end %>   
  <div>
     <%= event.text_area :title, placeholder: "title" %><br>
+    date: <%= event.date_field :date %><br>
     <%= event.text_area :location, placeholder: "location" %><br>
+    
     <%= event.text_area :body, placeholder: "message" %><br>
     <%= event.submit "create event"%><br>
 <div>

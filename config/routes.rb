@@ -6,7 +6,5 @@ Rails.application.routes.draw do
   resources :attendances
   resources :events
   resources :profiles
-  get 'up' => 'rails/health#show', as: :rails_health_check
-
   root 'events#index'
 end
