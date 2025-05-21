@@ -1,1 +1,2 @@
-  <%= link_to "attend event", attendances_attend_path(:attendee_id => current_user.id, :attended_event_id => @event.id), data: { turbo_method: "post" } %>
+  <%= link_to "attend", attendances_attend_path(:attendee_id => current_user.id, :attended_event_id => @event.id), data: { turbo_method: "post" }, class: 'button' %>
+    <%#= link_to "rescind", attendances_attend_path(:attendee_id => current_user.id, :attended_event_id => @event.id), data: { turbo_method: "destroy" } %>
