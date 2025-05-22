@@ -4,16 +4,17 @@ class AttendancesController < ApplicationController
   def create
     if Attendance.find_by(attendance_params).nil?
       @attendance = Attendance.new(attendance_params)
+
       respond_to do |format|
         if @attendance.save
-          format.html { redirect_to action: 'index', notice: 'you are attending the event!' }
+          format.html { redirect_to root_path, notice: 'you are attending the event!' }
         else
-          format.html { redirect_to action: 'index', notice: 'an error occured' }
+          format.html { redirect_to root_path 'index', notice: 'an error occured' }
         end
       end
     else
       flash.alert = 'you are already attending this event'
-      redirect_to action: 'index'
+      redirect_to root_path
     end
   end
 
