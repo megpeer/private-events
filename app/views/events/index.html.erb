@@ -9,12 +9,15 @@
     <div>
         <h3>Upcoming Events:</h3>
         <%= turbo_frame_tag "events" do %>
-        <%= render @events %>
+        <%= render collection: @events.future_events, partial: "events/event" %>
         <% end %>
     </div>
+    
     <div>
         <h3>Past Events</h3>
-        sample text
+        <%= turbo_frame_tag "events" do %>
+        <%= render collection: @events.past_events, partial: "events/event" %>
+        <% end %>
     <% else %>
    :D
 <% end %>
