@@ -17222,3 +17222,2663 @@ Processing by ProfilesController#show as HTML
 Completed 200 OK in 32ms (Views: 3.3ms | ActiveRecord: 0.2ms (4 queries, 0 cached) | GC: 0.6ms)
 
 
+Started GET "/profiles/1" for ::1 at 2025-05-24 13:11:44 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.5ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.2ms)
+Completed 200 OK in 29ms (Views: 3.8ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Started GET "/profiles/1" for ::1 at 2025-05-24 15:42:32 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.7ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 3.5ms | ActiveRecord: 1.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/2" for ::1 at 2025-05-24 15:42:32 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 2 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 3.8ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 15:42:34 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.7ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 3.6ms | ActiveRecord: 0.4ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 15:42:41 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.2ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 3.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 4.1ms | ActiveRecord: 0.2ms (5 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 15:45:04 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 6.7ms | ActiveRecord: 0.8ms (5 queries, 2 cached) | GC: 0.4ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 15:45:05 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 1.2ms | GC: 0.6ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 10.2ms | GC: 5.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | GC: 5.9ms)
+Completed 200 OK in 52ms (Views: 11.1ms | ActiveRecord: 0.5ms (4 queries, 0 cached) | GC: 5.9ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 15:45:55 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.7ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.6ms)
+Completed 200 OK in 41ms (Views: 6.0ms | ActiveRecord: 0.3ms (5 queries, 2 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 15:45:56 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 2.4ms | GC: 0.3ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.3ms)
+Completed 200 OK in 44ms (Views: 6.4ms | ActiveRecord: 0.3ms (5 queries, 2 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 15:48:01 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.5ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.2ms)
+Completed 200 OK in 29ms (Views: 6.5ms | ActiveRecord: 0.8ms (5 queries, 2 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 15:48:17 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.1ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.6ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms (5 queries, 2 cached) | GC: 0.8ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Private Events</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%# navbar%>
+    <nav class="navbar">
+      <div class="nav-container">
+        <% if user_signed_in? %>
+          <%= link_to "home", root_path %>
+          <%= link_to "create event", root_path %>
+          <%= link_to "my events", root_path %>
+          <%= link_to "log out", destroy_user_session_path, date { turbo_method: "delete" } %>
+        <% else %>
+          <%= link_to "home", root_path %>
+          <%= link_to "home", root_path %>
+        <% end %>
+
+
+  
+      <div>home events log in</div>
+    </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+    <%= yield %>ß
+  </body>
+</html>
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/Users/mpeer/Documents/repos/private-events/app/views/layouts/application.html.erb:33: syntax error, unexpected ':', expecting '}'
+...sion_path, date { turbo_method: "delete" } ); @output_buffer...
+...                              ^
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>Private Events</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%# navbar%>
+    <nav class="navbar">
+      <div class="nav-container">
+        <% if user_signed_in? %>
+          <%= link_to "home", root_path %>
+          <%= link_to "create event", root_path %>
+          <%= link_to "my events", root_path %>
+          <%= link_to "log out", destroy_user_session_path, date { turbo_method: "delete" } %>
+        <% else %>
+          <%= link_to "home", root_path %>
+          <%= link_to "home", root_path %>
+        <% end %>
+
+
+  
+      <div>home events log in</div>
+    </nav>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+    <%= yield %>ß
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>Private Events</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <meta name="apple-mobile-web-app-capable" content="yes">
+7:        <meta name="mobile-web-app-capable" content="yes">
+8:        <%= csrf_meta_tags %>
+9:        <%= csp_meta_tag %>
+10:    
+11:        <%= yield :head %>
+12:    
+13:        <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+14:        <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+15:    
+16:        <link rel="icon" href="/icon.png" type="image/png">
+17:        <link rel="icon" href="/icon.svg" type="image/svg+xml">
+18:        <link rel="apple-touch-icon" href="/icon.png">
+19:    
+20:        <%# Includes all stylesheet files in app/assets/stylesheets %>
+21:        <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+22:        <%= javascript_importmap_tags %>
+23:      </head>
+24:    
+25:      <body>
+26:        <%# navbar%>
+27:        <nav class="navbar">
+28:          <div class="nav-container">
+29:            <% if user_signed_in? %>
+30:              <%= link_to "home", root_path %>
+31:              <%= link_to "create event", root_path %>
+32:              <%= link_to "my events", root_path %>
+33:              <%= link_to "log out", destroy_user_session_path, date { turbo_method: "delete" } %>
+34:            <% else %>
+35:              <%= link_to "home", root_path %>
+36:              <%= link_to "home", root_path %>
+37:            <% end %>
+38:    
+39:    
+40:      
+41:          <div>home events log in</div>
+42:        </nav>
+43:    
+44:      <p class="notice"><%= notice %></p>
+45:      <p class="alert"><%= alert %></p>
+46:    
+47:        <%= yield %>ß
+48:      </body>
+49:    </html>
+  
+app/views/layouts/application.html.erb:33: syntax error, unexpected ':', expecting '}'
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/Users/mpeer/Documents/repos/private-events/app/views/layouts/application.html.erb:33: syntax error, unexpected ':', expecting '}'
+...sion_path, date { turbo_method: "delete" } ); @output_buffer...
+...                              ^
+):
+  
+app/views/layouts/application.html.erb:33: syntax error, unexpected ':', expecting '}'
+Started GET "/favicon.ico" for ::1 at 2025-05-24 15:48:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2025-05-24 15:48:53 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.5ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 6.3ms | ActiveRecord: 0.9ms (5 queries, 2 cached) | GC: 0.5ms)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-05-24 19:50:10 -0400
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='PrivateEvents',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 37ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 19:50:10 -0400
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-05-24 19:50:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.2ms)
+Completed 200 OK in 46ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-05-24 19:50:21 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-05-24 19:50:34 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'moo@moo.moo' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 293ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 19:50:34 -0400
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 2.7ms | GC: 1.6ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.3ms | GC: 3.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | GC: 4.3ms)
+Completed 200 OK in 22ms (Views: 7.4ms | ActiveRecord: 0.1ms (5 queries, 2 cached) | GC: 4.9ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 19:52:38 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 5.7ms | ActiveRecord: 0.8ms (5 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 19:54:58 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.8ms | GC: 2.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 2.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.7ms (5 queries, 2 cached) | GC: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form_path' for an instance of #<Class:0x000000011fc923c0>)
+Caused by: NameError (undefined local variable or method `form_path' for an instance of #<Class:0x000000011fc923c0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `form_path' for an instance of #<Class:0x000000011fc923c0>):
+    28:       <div class="nav-container">
+    29:         <% if user_signed_in? %>
+    30:           <%= link_to "home", root_path %>
+    31:           <%= link_to "create event", form_path %>
+    32:           <%= link_to "my events", root_path %>
+    33:           <%= link_to "log out", destroy_user_session_path, data: { turbo_method: "delete" } %>
+    34:         <% else %>
+  
+app/views/layouts/application.html.erb:31
+
+Information for cause: NameError (undefined local variable or method `form_path' for an instance of #<Class:0x000000011fc923c0>):
+  
+app/views/layouts/application.html.erb:31
+Started GET "/" for ::1 at 2025-05-24 19:55:28 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.9ms | GC: 0.2ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.0ms (5 queries, 2 cached) | GC: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>)
+Caused by: NameError (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>):
+    28:       <div class="nav-container">
+    29:         <% if user_signed_in? %>
+    30:           <%= link_to "home", root_path %>
+    31:           <%= link_to "create event", event_form_path %>
+    32:           <%= link_to "my events", root_path %>
+    33:           <%= link_to "log out", destroy_user_session_path, data: { turbo_method: "delete" } %>
+    34:         <% else %>
+  
+app/views/layouts/application.html.erb:31
+
+Information for cause: NameError (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>):
+  
+app/views/layouts/application.html.erb:31
+Started GET "/" for ::1 at 2025-05-24 19:55:29 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.8ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.3ms (5 queries, 2 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>)
+Caused by: NameError (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>):
+    28:       <div class="nav-container">
+    29:         <% if user_signed_in? %>
+    30:           <%= link_to "home", root_path %>
+    31:           <%= link_to "create event", event_form_path %>
+    32:           <%= link_to "my events", root_path %>
+    33:           <%= link_to "log out", destroy_user_session_path, data: { turbo_method: "delete" } %>
+    34:         <% else %>
+  
+app/views/layouts/application.html.erb:31
+
+Information for cause: NameError (undefined local variable or method `event_form_path' for an instance of #<Class:0x0000000122239600>):
+  
+app/views/layouts/application.html.erb:31
+Started GET "/" for ::1 at 2025-05-24 19:55:40 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.9ms (5 queries, 2 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `events_form_path' for an instance of #<Class:0x000000011f9dcf90>)
+Caused by: NameError (undefined local variable or method `events_form_path' for an instance of #<Class:0x000000011f9dcf90>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `events_form_path' for an instance of #<Class:0x000000011f9dcf90>):
+    28:       <div class="nav-container">
+    29:         <% if user_signed_in? %>
+    30:           <%= link_to "home", root_path %>
+    31:           <%= link_to "create event", events_form_path %>
+    32:           <%= link_to "my events", root_path %>
+    33:           <%= link_to "log out", destroy_user_session_path, data: { turbo_method: "delete" } %>
+    34:         <% else %>
+  
+app/views/layouts/application.html.erb:31
+
+Information for cause: NameError (undefined local variable or method `events_form_path' for an instance of #<Class:0x000000011f9dcf90>):
+  
+app/views/layouts/application.html.erb:31
+Started GET "/" for ::1 at 2025-05-24 19:58:18 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.8ms | GC: 0.3ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 7.3ms | GC: 1.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 2.2ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.9ms (5 queries, 2 cached) | GC: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_event_form_path' for an instance of #<Class:0x00000001229f5dd0>)
+Caused by: NameError (undefined local variable or method `new_event_form_path' for an instance of #<Class:0x00000001229f5dd0>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `new_event_form_path' for an instance of #<Class:0x00000001229f5dd0>):
+    28:       <div class="nav-container">
+    29:         <% if user_signed_in? %>
+    30:           <%= link_to "home", root_path %>
+    31:           <%= link_to "create event", new_event_form_path %>
+    32:           <%= link_to "my events", root_path %>
+    33:           <%= link_to "log out", destroy_user_session_path, data: { turbo_method: "delete" } %>
+    34:         <% else %>
+  
+app/views/layouts/application.html.erb:31
+
+Information for cause: NameError (undefined local variable or method `new_event_form_path' for an instance of #<Class:0x00000001229f5dd0>):
+  
+app/views/layouts/application.html.erb:31
+Started GET "/routes" for ::1 at 2025-05-24 19:58:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started GET "/rails/info/routes?query=%C6%92form" for ::1 at 2025-05-24 19:58:29 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"ƒform"}
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/rails/info/routes?query=%C6%92form" for ::1 at 2025-05-24 19:58:30 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"ƒform"}
+Completed 200 OK in 37ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/info/routes?query=for" for ::1 at 2025-05-24 19:58:32 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"for"}
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/info/routes?query=form" for ::1 at 2025-05-24 19:58:32 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"form"}
+Completed 200 OK in 41ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.8ms)
+
+
+Started GET "/rails/info/routes?query=form" for ::1 at 2025-05-24 19:58:34 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"form"}
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/rails/info/routes?query=form" for ::1 at 2025-05-24 19:58:35 -0400
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"form"}
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:01:01 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 1.6ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 7.1ms | ActiveRecord: 1.0ms (5 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2025-05-24 20:01:06 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for EventsController):
+  
+actionpack (8.0.2) lib/abstract_controller/base.rb:158:in `process'
+actionview (8.0.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (8.0.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.2) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.2) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.2) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.2) lib/rails/engine/lazy_route_set.rb:68:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.1.13) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.1.13) lib/rack/etag.rb:29:in `call'
+rack (3.1.13) lib/rack/conditional_get.rb:31:in `call'
+rack (3.1.13) lib/rack/head.rb:15:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (8.0.2) lib/action_dispatch/http/content_security_policy.rb:38:in `call'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:274:in `context'
+rack-session (2.1.0) lib/rack/session/abstract/id.rb:268:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/cookies.rb:706:in `call'
+activerecord (8.0.2) lib/active_record/migration.rb:671:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.13) lib/rack/method_override.rb:28:in `call'
+rack (3.1.13) lib/rack/runtime.rb:24:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.13) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+Started GET "/events/new" for ::1 at 2025-05-24 20:02:06 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Passed nil to the :model argument, expect an object or false)
+Caused by: ArgumentError (Passed nil to the :model argument, expect an object or false)
+
+Information for: ActionView::Template::Error (Passed nil to the :model argument, expect an object or false):
+    1: <%= form_with model: @event do |event| %>
+    2:     <% if event.object.errors.any? %>
+    3: <div>
+    4:     <p><%= pluralize(event.object.errors.count, "error") %></p>
+  
+app/views/events/new.html.erb:1
+
+Information for cause: ArgumentError (Passed nil to the :model argument, expect an object or false):
+  
+app/views/events/new.html.erb:1
+Started GET "/events/new" for ::1 at 2025-05-24 20:04:08 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Passed nil to the :model argument, expect an object or false)
+Caused by: ArgumentError (Passed nil to the :model argument, expect an object or false)
+
+Information for: ActionView::Template::Error (Passed nil to the :model argument, expect an object or false):
+    1: <%= form_with model: @event do |event| %>
+    2:     <% if event.object.errors.any? %>
+    3: <div>
+    4:     <p><%= pluralize(event.object.errors.count, "error") %></p>
+  
+app/views/events/new.html.erb:1
+
+Information for cause: ArgumentError (Passed nil to the :model argument, expect an object or false):
+  
+app/views/events/new.html.erb:1
+Started GET "/events/new" for ::1 at 2025-05-24 20:04:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Passed nil to the :model argument, expect an object or false)
+Caused by: ArgumentError (Passed nil to the :model argument, expect an object or false)
+
+Information for: ActionView::Template::Error (Passed nil to the :model argument, expect an object or false):
+    1: <%= form_with model: @event do |event| %>
+    2:     <% if event.object.errors.any? %>
+    3: <div>
+    4:     <p><%= pluralize(event.object.errors.count, "error") %></p>
+  
+app/views/events/new.html.erb:1
+
+Information for cause: ArgumentError (Passed nil to the :model argument, expect an object or false):
+  
+app/views/events/new.html.erb:1
+Started GET "/events/form" for ::1 at 2025-05-24 20:04:44 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"form"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = NULL LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+Completed 404 Not Found in 49ms (ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'=form):
+  
+app/controllers/events_controller.rb:8:in `show'
+Started GET "/events/new" for ::1 at 2025-05-24 20:04:54 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Passed nil to the :model argument, expect an object or false)
+Caused by: ArgumentError (Passed nil to the :model argument, expect an object or false)
+
+Information for: ActionView::Template::Error (Passed nil to the :model argument, expect an object or false):
+    1: <%= form_with model: @event do |event| %>
+    2:     <% if event.object.errors.any? %>
+    3: <div>
+    4:     <p><%= pluralize(event.object.errors.count, "error") %></p>
+  
+app/views/events/new.html.erb:1
+
+Information for cause: ArgumentError (Passed nil to the :model argument, expect an object or false):
+  
+app/views/events/new.html.erb:1
+Started GET "/" for ::1 at 2025-05-24 20:05:06 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 3.8ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 14.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 54ms (Views: 20.9ms | ActiveRecord: 0.3ms (5 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2025-05-24 20:05:17 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Passed nil to the :model argument, expect an object or false)
+Caused by: ArgumentError (Passed nil to the :model argument, expect an object or false)
+
+Information for: ActionView::Template::Error (Passed nil to the :model argument, expect an object or false):
+    1: <%= form_with model: @event do |event| %>
+    2:     <% if event.object.errors.any? %>
+    3: <div>
+    4:     <p><%= pluralize(event.object.errors.count, "error") %></p>
+  
+app/views/events/new.html.erb:1
+
+Information for cause: ArgumentError (Passed nil to the :model argument, expect an object or false):
+  
+app/views/events/new.html.erb:1
+Started GET "/events/new" for ::1 at 2025-05-24 20:09:45 -0400
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 1.4ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 1.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+))
+Caused by: ArgumentError (wrong number of arguments (given 0, expected 1+))
+
+Information for: ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    1: <%= form_with url: session_path do |event| %>
+    2:     <% if event.object.errors.any? %>
+    3: <div>
+    4:     <p><%= pluralize(event.object.errors.count, "error") %></p>
+  
+app/views/events/new.html.erb:1
+
+Information for cause: ArgumentError (wrong number of arguments (given 0, expected 1+)):
+  
+app/views/events/new.html.erb:1
+Started GET "/" for ::1 at 2025-05-24 20:10:41 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [3 times] (Duration: 3.4ms | GC: 1.5ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 7.7ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 1.5ms)
+Completed 200 OK in 43ms (Views: 9.1ms | ActiveRecord: 0.9ms (5 queries, 2 cached) | GC: 1.5ms)
+
+
+Started POST "/events" for ::1 at 2025-05-24 20:11:27 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"taco night", "date"=>"2025-05-26", "location"=>"taqueria", "body"=>"everything is guaranteed fresh"}, "commit"=>"create event"}
+[31mUnpermitted parameter: :date. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x0000000127778ad0>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"taco night", "date"=>"2025-05-26", "location"=>"taqueria", "body"=>"everything is guaranteed fresh"}, "commit"=>"create event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "title", "location", "body", "user_id", "date") VALUES ('2025-05-25 00:11:27.379406', '2025-05-25 00:11:27.379406', 'taco night', 'taqueria', 'everything is guaranteed fresh', 1, NULL) RETURNING "id" /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  Rendering events/create.turbo_stream.erb
+  Rendered events/_event.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered events/create.turbo_stream.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 1.5ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/events/4" for ::1 at 2025-05-24 20:11:28 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 4 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.9ms | GC: 0.3ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.3ms)
+Completed 200 OK in 43ms (Views: 4.2ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:13:02 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.2ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 1.7ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.7ms)
+Completed 200 OK in 31ms (Views: 6.5ms | ActiveRecord: 1.3ms (6 queries, 3 cached) | GC: 5.7ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:13:19 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 1.7ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 6.4ms | ActiveRecord: 0.8ms (6 queries, 3 cached) | GC: 0.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:13:23 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 0.6ms | GC: 0.3ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.5ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.5ms)
+Completed 200 OK in 41ms (Views: 5.3ms | ActiveRecord: 0.4ms (4 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:14:08 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 1.6ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 2.5ms)
+Completed 200 OK in 31ms (Views: 8.7ms | ActiveRecord: 0.8ms (6 queries, 3 cached) | GC: 2.5ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:14:11 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 2.6ms | GC: 0.4ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.4ms)
+Completed 200 OK in 43ms (Views: 6.4ms | ActiveRecord: 0.3ms (6 queries, 3 cached) | GC: 0.4ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:14:13 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 0.6ms | GC: 0.3ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.7ms | GC: 0.1ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 4.7ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.4ms)
+Completed 200 OK in 46ms (Views: 5.5ms | ActiveRecord: 0.5ms (4 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:14:17 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.6ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 3.5ms | ActiveRecord: 0.4ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:14:37 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:15
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 2.0ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.3ms)
+Completed 200 OK in 33ms (Views: 7.6ms | ActiveRecord: 1.1ms (6 queries, 3 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:14:43 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 2.3ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | GC: 0.1ms)
+Completed 200 OK in 41ms (Views: 6.2ms | ActiveRecord: 0.3ms (6 queries, 3 cached) | GC: 0.1ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:15:42 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:2
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 1.7ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.3ms)
+Completed 200 OK in 28ms (Views: 6.8ms | ActiveRecord: 0.9ms (6 queries, 3 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:15:58 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 2.1ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.5ms)
+Completed 200 OK in 36ms (Views: 8.1ms | ActiveRecord: 1.0ms (6 queries, 3 cached) | GC: 3.2ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:16:05 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.7ms | GC: 0.2ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 2.1ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.2ms)
+Completed 200 OK in 45ms (Views: 5.9ms | ActiveRecord: 0.3ms (6 queries, 3 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:17:07 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 1.6ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.2ms)
+Completed 200 OK in 28ms (Views: 6.2ms | ActiveRecord: 1.0ms (6 queries, 3 cached) | GC: 0.3ms)
+
+
+Started GET "/events/3" for ::1 at 2025-05-24 20:17:54 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 3 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.6ms)
+Completed 200 OK in 44ms (Views: 4.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/events/4" for ::1 at 2025-05-24 20:17:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 4 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 3.0ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/4" for ::1 at 2025-05-24 20:18:58 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 4 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.3ms)
+Completed 200 OK in 31ms (Views: 5.8ms | ActiveRecord: 1.0ms (3 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/events/4" for ::1 at 2025-05-24 20:19:09 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 4 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.3ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:19:12 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.6ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 4.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 3.9ms)
+Completed 200 OK in 47ms (Views: 9.4ms | ActiveRecord: 0.5ms (4 queries, 0 cached) | GC: 3.9ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:19:20 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [4 times] (Duration: 2.0ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | GC: 0.6ms)
+Completed 200 OK in 42ms (Views: 7.3ms | ActiveRecord: 0.3ms (6 queries, 3 cached) | GC: 0.9ms)
+
+
+Started POST "/events" for ::1 at 2025-05-24 20:20:00 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"Haloween", "date"=>"2025-10-31", "location"=>"the forest", "body"=>"come on out to the secret forest graveyard"}, "commit"=>"create event"}
+[31mUnpermitted parameter: :date. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00000001581da3e0>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"Haloween", "date"=>"2025-10-31", "location"=>"the forest", "body"=>"come on out to the secret forest graveyard"}, "commit"=>"create event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mEvent Create (0.9ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "title", "location", "body", "user_id", "date") VALUES ('2025-05-25 00:20:00.178887', '2025-05-25 00:20:00.178887', 'Haloween', 'the forest', 'come on out to the secret forest graveyard', 1, NULL) RETURNING "id" /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  Rendering events/create.turbo_stream.erb
+  Rendered events/_event.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered events/create.turbo_stream.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 1.5ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/events/5" for ::1 at 2025-05-24 20:20:02 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 5 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.2ms)
+Completed 200 OK in 42ms (Views: 3.4ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:37:30 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 2.5ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 7.5ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 1.0ms)
+Completed 200 OK in 44ms (Views: 7.2ms | ActiveRecord: 1.1ms (7 queries, 4 cached) | GC: 1.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:37:31 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.7ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 3.6ms | ActiveRecord: 0.4ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/1" for ::1 at 2025-05-24 20:37:31 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 3.0ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 6.6ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:37:33 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 2.8ms | GC: 0.3ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.3ms)
+Completed 200 OK in 42ms (Views: 6.3ms | ActiveRecord: 0.3ms (7 queries, 4 cached) | GC: 0.3ms)
+
+
+Started GET "/events/5" for ::1 at 2025-05-24 20:37:35 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 5 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.3ms)
+Completed 200 OK in 40ms (Views: 3.4ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:37:42 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [1 times] (Duration: 0.6ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.4ms)
+Completed 200 OK in 41ms (Views: 3.6ms | ActiveRecord: 0.4ms (4 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/events/1" for ::1 at 2025-05-24 20:37:45 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 39ms (Views: 3.2ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/4" for ::1 at 2025-05-24 20:37:47 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 4 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 3.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/5" for ::1 at 2025-05-24 20:37:49 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 5 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 5.9ms | GC: 3.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 3.8ms)
+Completed 200 OK in 43ms (Views: 6.5ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 3.8ms)
+
+
+Started POST "/create_attendance" for ::1 at 2025-05-24 20:37:51 -0400
+Processing by AttendancesController#create as TURBO_STREAM
+  Parameters: {"attended_event_id"=>"5", "attendee_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."attendee_id" = 1 AND "attendances"."attended_event_id" = 5 LIMIT 1 /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  ↳ app/controllers/attendances_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  ↳ app/controllers/attendances_controller.rb:9:in `block in create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  ↳ app/controllers/attendances_controller.rb:9:in `block in create'
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 5 LIMIT 1 /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  ↳ app/controllers/attendances_controller.rb:9:in `block in create'
+  [1m[36mAttendance Create (0.1ms)[0m  [1m[32mINSERT INTO "attendances" ("created_at", "updated_at", "attendee_id", "attended_event_id") VALUES ('2025-05-25 00:37:51.394955', '2025-05-25 00:37:51.394955', 1, 5) RETURNING "id" /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  ↳ app/controllers/attendances_controller.rb:9:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='attendances'*/[0m
+  ↳ app/controllers/attendances_controller.rb:9:in `block in create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 1.1ms (5 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:37:51 -0400
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 1.5ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.2ms)
+Completed 200 OK in 22ms (Views: 3.3ms | ActiveRecord: 0.1ms (7 queries, 4 cached) | GC: 0.2ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:37:53 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [2 times] (Duration: 1.1ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 3.9ms | ActiveRecord: 0.4ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/events/5" for ::1 at 2025-05-24 20:37:55 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 5 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 3.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:38:09 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 3.0ms | GC: 0.6ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.6ms)
+Completed 200 OK in 39ms (Views: 6.3ms | ActiveRecord: 0.3ms (7 queries, 4 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:41:05 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [5 times] (Duration: 2.0ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | GC: 0.5ms)
+Completed 200 OK in 31ms (Views: 7.7ms | ActiveRecord: 0.8ms (7 queries, 4 cached) | GC: 2.0ms)
+
+
+Started POST "/events" for ::1 at 2025-05-24 20:41:59 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"filed tesiting", "date"=>"2025-07-16", "location"=>"cape canaveral", "body"=>"bring your own jet"}, "commit"=>"create event"}
+[31mUnpermitted parameter: :date. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x0000000126f3cc68>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"filed tesiting", "date"=>"2025-07-16", "location"=>"cape canaveral", "body"=>"bring your own jet"}, "commit"=>"create event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mEvent Create (0.6ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "title", "location", "body", "user_id", "date") VALUES ('2025-05-25 00:41:59.527410', '2025-05-25 00:41:59.527410', 'filed tesiting', 'cape canaveral', 'bring your own jet', 1, NULL) RETURNING "id" /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  Rendering events/create.turbo_stream.erb
+  Rendered events/_event.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered events/create.turbo_stream.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 1.6ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/events/6" for ::1 at 2025-05-24 20:42:02 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 6 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.8ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/6" for ::1 at 2025-05-24 20:44:15 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 6 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 4.3ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/6" for ::1 at 2025-05-24 20:44:54 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 6 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.7ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.9ms)
+Completed 200 OK in 30ms (Views: 5.8ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 6.4ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:45:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [6 times] (Duration: 11.4ms | GC: 6.7ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 21.2ms | GC: 6.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | GC: 7.3ms)
+Completed 200 OK in 81ms (Views: 28.3ms | ActiveRecord: 1.3ms (8 queries, 5 cached) | GC: 7.7ms)
+
+
+Started POST "/events" for ::1 at 2025-05-24 20:46:29 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"movies", "date"=>"2026-01-01", "location"=>"the hub", "body"=>"we'll watch some horror movies together"}, "commit"=>"create event"}
+[31mUnpermitted parameter: :date. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000011eea0c80>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"movies", "date"=>"2026-01-01", "location"=>"the hub", "body"=>"we'll watch some horror movies together"}, "commit"=>"create event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mEvent Create (0.5ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "title", "location", "body", "user_id", "date") VALUES ('2025-05-25 00:46:29.767420', '2025-05-25 00:46:29.767420', 'movies', 'the hub', 'we''ll watch some horror movies together', 1, NULL) RETURNING "id" /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  Rendering events/create.turbo_stream.erb
+  Rendered events/_event.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered events/create.turbo_stream.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 1.7ms | ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/5" for ::1 at 2025-05-24 20:46:31 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 5 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.6ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/7" for ::1 at 2025-05-24 20:46:33 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 7 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 3.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:46:36 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [7 times] (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "attendances" ON "events"."id" = "attendances"."attended_event_id" WHERE "attendances"."attendee_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:7
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [2 times] (Duration: 1.0ms | GC: 0.0ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 6.7ms | ActiveRecord: 0.5ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2025-05-24 20:53:29 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"water time", "date"=>"2026-01-01", "location"=>"experiential dome", "body"=>"report to the dome, for the yearly water"}, "commit"=>"create event"}
+[31mUnpermitted parameter: :date. Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x000000011f445320>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"water time", "date"=>"2026-01-01", "location"=>"experiential dome", "body"=>"report to the dome, for the yearly water"}, "commit"=>"create event", "controller"=>"events", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mEvent Create (0.4ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "title", "location", "body", "user_id", "date") VALUES ('2025-05-25 00:53:29.113621', '2025-05-25 00:53:29.113621', 'water time', 'experiential dome', 'report to the dome, for the yearly water', 1, NULL) RETURNING "id" /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  Rendering events/create.turbo_stream.erb
+  Rendered events/_event.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered events/create.turbo_stream.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 1.1ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/8" for ::1 at 2025-05-24 20:53:31 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 8 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 4.8ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:53:46 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [8 times] (Duration: 3.1ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 7.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 8.4ms | ActiveRecord: 1.0ms (10 queries, 7 cached) | GC: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2025-05-24 20:54:29 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"title"=>"high fi", "date"=>"2025-05-31", "location"=>"video recorder", "body"=>"its in    the tapes"}, "commit"=>"create event"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mEvent Create (0.8ms)[0m  [1m[32mINSERT INTO "events" ("created_at", "updated_at", "title", "location", "body", "user_id", "date") VALUES ('2025-05-25 00:54:29.429871', '2025-05-25 00:54:29.429871', 'high fi', 'video recorder', 'its in    the tapes', 1, '2025-05-31') RETURNING "id" /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:15:in `block in create'
+  Rendering events/create.turbo_stream.erb
+  Rendered events/_event.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered events/create.turbo_stream.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 1.5ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/8" for ::1 at 2025-05-24 20:54:35 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 8 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 7.2ms)
+Completed 200 OK in 47ms (Views: 11.0ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 7.2ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 20:54:38 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.9ms | GC: 0.6ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.6ms)
+Completed 200 OK in 41ms (Views: 3.6ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 20:55:15 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 4.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 20:55:17 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 2.1ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 20:55:30 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 4.7ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 20:56:19 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 4.4ms | ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 20:56:19 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 3.4ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2025-05-24 20:56:21 -0400
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = 1 /*action='show',application='PrivateEvents',controller='profiles'*/[0m
+  ↳ app/views/profiles/show.html.erb:3
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 2.7ms | GC: 0.6ms)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 4.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil)
+Caused by: NoMethodError (undefined method `strftime' for nil)
+
+Information for: ActionView::Template::Error (undefined method `strftime' for nil):
+    2:     <p>
+    3:         <%= link_to event.title, event, data: {turbo_frame: "_top"} %><br>
+    4:         Event: <%= event.title %>
+    5:         Date: <%= event.date.strftime %>
+    6:         Host: <%= event.user.username %>
+    7:         Location: <%= event.location %>
+    8:         Info: <%= event.body %>
+  
+app/views/events/_event.html.erb:5
+app/views/profiles/show.html.erb:3
+
+Information for cause: NoMethodError (undefined method `strftime' for nil):
+  
+app/views/events/_event.html.erb:5
+app/views/profiles/show.html.erb:3
+Started GET "/" for ::1 at 2025-05-24 20:56:22 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 1.3ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for nil)
+Caused by: NoMethodError (undefined method `strftime' for nil)
+
+Information for: ActionView::Template::Error (undefined method `strftime' for nil):
+    2:     <p>
+    3:         <%= link_to event.title, event, data: {turbo_frame: "_top"} %><br>
+    4:         Event: <%= event.title %>
+    5:         Date: <%= event.date.strftime %>
+    6:         Host: <%= event.user.username %>
+    7:         Location: <%= event.location %>
+    8:         Info: <%= event.body %>
+  
+app/views/events/_event.html.erb:5
+app/views/events/index.html.erb:11
+app/views/events/index.html.erb:10
+
+Information for cause: NoMethodError (undefined method `strftime' for nil):
+  
+app/views/events/_event.html.erb:5
+app/views/events/index.html.erb:11
+app/views/events/index.html.erb:10
+Started GET "/" for ::1 at 2025-05-24 20:56:41 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 4.9ms | GC: 1.8ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 8.6ms | GC: 1.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 1.8ms)
+Completed 200 OK in 35ms (Views: 9.9ms | ActiveRecord: 0.9ms (11 queries, 8 cached) | GC: 1.8ms)
+
+
+Started DELETE "/users/sign_out?_method=delete" for ::1 at 2025-05-24 20:56:58 -0400
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='destroy',application='PrivateEvents',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 32ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:56:58 -0400
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.1ms)
+Completed 200 OK in 21ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:58:42 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 2.0ms | ActiveRecord: 0.6ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:58:45 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:59:05 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 2.0ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-05-24 20:59:07 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.7ms | GC: 3.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 3.9ms)
+Completed 200 OK in 51ms (Views: 12.4ms | ActiveRecord: 0.3ms (0 queries, 0 cached) | GC: 3.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-05-24 20:59:10 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.3ms)
+Completed 200 OK in 38ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-05-24 20:59:12 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.1ms)
+Completed 200 OK in 42ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2025-05-24 20:59:27 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-05-24 20:59:28 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'moo@moo.moo' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='sessions'*/[0m
+Completed 401 Unauthorized in 272ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 231ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-05-24 20:59:37 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'moo@moo.moo' ORDER BY "users"."id" ASC LIMIT 1 /*action='create',application='PrivateEvents',controller='sessions'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='PrivateEvents',controller='sessions'*/[0m
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = '2025-05-25 00:59:37.689600', "updated_at" = '2025-05-25 00:59:37.689853' WHERE "users"."id" = 1 /*action='create',application='PrivateEvents',controller='sessions'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='PrivateEvents',controller='sessions'*/[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 259ms (ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:59:37 -0400
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 3.4ms | GC: 0.3ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 5.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.3ms)
+Completed 200 OK in 21ms (Views: 5.4ms | ActiveRecord: 0.1ms (11 queries, 8 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 20:59:43 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 8.9ms | GC: 4.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 12.2ms | GC: 4.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 4.1ms)
+Completed 200 OK in 50ms (Views: 12.9ms | ActiveRecord: 0.4ms (11 queries, 8 cached) | GC: 4.1ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 21:00:35 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:6
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 3.2ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.4ms)
+Completed 200 OK in 26ms (Views: 7.8ms | ActiveRecord: 0.8ms (11 queries, 8 cached) | GC: 0.6ms)
+
+
+Started GET "/events/9" for ::1 at 2025-05-24 21:00:39 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = 9 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/controllers/events_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/show.html.erb:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='show',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_attend.html.erb:1
+  Rendered events/_attend.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered events/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.6ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 21:01:01 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 3.1ms | GC: 0.0ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 7.8ms | ActiveRecord: 0.9ms (11 queries, 8 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 21:01:36 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:11
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 3.3ms | GC: 0.2ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 9.1ms | GC: 2.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | GC: 2.5ms)
+Completed 200 OK in 31ms (Views: 10.3ms | ActiveRecord: 1.2ms (11 queries, 8 cached) | GC: 2.5ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 21:03:10 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 3.2ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 6.6ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.2ms)
+Completed 200 OK in 29ms (Views: 7.8ms | ActiveRecord: 0.9ms (11 queries, 8 cached) | GC: 0.3ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 21:03:40 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 4.7ms | GC: 1.6ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 8.1ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 1.8ms)
+Completed 200 OK in 33ms (Views: 9.5ms | ActiveRecord: 0.8ms (11 queries, 8 cached) | GC: 1.9ms)
+
+
+Started GET "/" for ::1 at 2025-05-24 21:05:35 -0400
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:1
+  Rendered events/_form.html.erb (Duration: 0.5ms | GC: 0.2ms)
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" ORDER BY "events"."created_at" DESC /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/index.html.erb:12
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*action='index',application='PrivateEvents',controller='events'*/[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  ↳ app/views/events/_event.html.erb:5
+  Rendered collection of events/_event.html.erb [9 times] (Duration: 2.9ms | GC: 0.1ms)
+  Rendered events/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.3ms)
+Completed 200 OK in 29ms (Views: 5.0ms | ActiveRecord: 0.2ms (11 queries, 8 cached) | GC: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PrivateEvents'*/[0m
