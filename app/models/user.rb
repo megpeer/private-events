@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
   scope :attending_event, ->(event_id) { attendances.where(attended_event_id: event_id.exists?) }
+  scope :past_events, ->(attending_event) { where('date < ?', Time.zone.now) }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

@@ -8,6 +8,29 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to @event
+    else
+      redirect_to profile_path, notice: 'event has not been edited'
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    flash.alert = if @event.destroy
+                    'event deleted'
+                  else
+                    'event not deleted'
+                  end
+    redirect_to profile_path
+  end
+
   def create
     @event = Event.new(event_params)
     @event.user = current_user

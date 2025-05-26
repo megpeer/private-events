@@ -19,14 +19,9 @@ class AttendancesController < ApplicationController
   end
 
   def destroy
-    @attendance = Attendance.find_by(attending_params)
-    if @attendance.nil?
-      flash.alert = 'this event attendance doesnt exist'
-    else
-      @attendance.destroy
-      lash.notice = 'you are no longer attending this event'
-    end
-    redirect_to action: 'index'
+    @attendance = Attendance.find(attendance_params)
+    flash.notice = 'you are no longer attending this event'
+    redirect_to profile_path
   end
 
   private

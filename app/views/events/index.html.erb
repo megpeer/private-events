@@ -18,6 +18,7 @@
         <%= turbo_frame_tag "events" do %>
         <%= render collection: @events.past_events, partial: "events/event" %>
         <% end %>
+    </div>
     <% else %>
    :D
 <% end %>

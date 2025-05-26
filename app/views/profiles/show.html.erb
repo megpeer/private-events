@@ -1,8 +1,7 @@
 <h2>HOSTING</h2>
-<ul>
     <%= render collection: @hosted_events, partial: "events/event" %>
-</ul>
+
 <h2>ATTENDING</h2>
-<ul>
     <%= render collection: @attending_events, partial: "events/event" %>
-</ul>
+<h2>PAST EVENTS</h2>
+    <%= render collection: @attended_events, partial: "events/event" %>
