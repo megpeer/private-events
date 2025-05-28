@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   # resources :attendances
   post 'create_attendance', to: 'attendances#create'
-  resources :attendances
+  delete 'destroy_attendance', to: 'attendances#destroy'
+  # resources :attendances
   resources :events
   resources :profiles
   root 'events#index'

@@ -2,26 +2,19 @@ class AttendancesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    if Attendance.find_by(attendance_params).nil?
-      @attendance = Attendance.new(attendance_params)
+    return unless Attendance.find_by(attendance_params).nil?
 
-      respond_to do |format|
-        if @attendance.save
-          format.html { redirect_to root_path, notice: 'you are attending the event!' }
-        else
-          format.html { redirect_to root_path 'index', notice: 'an error occured' }
-        end
-      end
-    else
-      flash.alert = 'you are already attending this event'
-      redirect_to root_path
-    end
+    @attendance = Attendance.new(attendance_params)
+    @attendance.save
+    redirect_to profile_path(current_user)
+    flash.alert = 'you are now attending this event'
   end
 
   def destroy
-    @attendance = Attendance.find(attendance_params)
+    @attendance = Attendance.find_by(attendance_params)
+    @attendance.destroy
+    redirect_to profile_path(current_user)
     flash.notice = 'you are no longer attending this event'
-    redirect_to profile_path
   end
 
   private
