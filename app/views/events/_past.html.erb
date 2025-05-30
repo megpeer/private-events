@@ -5,5 +5,6 @@
         Host: <%= event.user.username %><br>
         Location: <%= event.location %><br>
         Info: <%= event.body %><br>
+        <%= link_to "delete", destroy_attendance_path(:attendee_id=>current_user.id, :attended_event_id=>@event.id), data: { turbo_method: "delete", turbo_confirm: "click OK to bail out of event" }%>
     </p>
 </div>

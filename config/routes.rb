@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete 'destroy_attendance', to: 'attendances#destroy'
   # resources :attendances
   resources :events
+  delete 'destroy_event', to: 'events#destroy'
   resources :profiles
   root 'events#index'
 end

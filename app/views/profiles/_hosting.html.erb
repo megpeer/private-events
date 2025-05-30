@@ -1,0 +1,13 @@
+<div>
+  <% @hosted_events.each do |event| %>
+    <p>
+      <%= link_to event.title, event, data: {turbo_frame: "_top"} %><br>
+        Date: <%= event.date %><br>
+        Host: <%= event.user.username %><br>
+        Location: <%= event.location %><br>
+        Info: <%= event.body %><br>
+        <%= link_to "edit", edit_event_path %>
+        <%= link_to "delete", destroy_event_path, data: { turbo_method: "delete", turbo_confirm: "click OK to delete event" }%>
+    </p>
+  <% end %>
+</div>
