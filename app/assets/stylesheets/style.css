@@ -1,0 +1,11 @@
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-decoration: none;
+    font-size: 20pt;
+    
+}
+.nav-item {
+    text-decoration: none;
+}

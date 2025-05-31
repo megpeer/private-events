@@ -1,9 +1,11 @@
-<% @attended_events.each do |event| %>
+<h3>Upcoming Events:</h3>
+<% @events.future_events.each do |event| %>
     <p>
+
         <strong> <%= event.title %> </strong><br>
         Hosted by: <em>@<%= event.user.username %>,</em>&nbsp; <%= event.date %><br>
         Location: <em><%= event.location %></em><br>
         <%=  event.body %><br>
-        <%= link_to "clear", destroy_attendance_path(:attendee_id=>current_user.id, :attended_event_id=>event.id), data: { turbo_method: "delete", turbo_confirm: "click OK to bail out of event" }%>
+        <%= link_to "attend event", attendances_attend_path(:attendee_id => current_user.id, :attended_event_id => @event.id), data: { turbo_method: "post" }%>
     </p>
 <% end %>

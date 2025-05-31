@@ -5,5 +5,8 @@
         Host: <%= event.user.username %><br>
         Location: <%= event.location %><br>
         Info: <%= event.body %><br>
+        <%= link_to "edit", edit_event_path %>
+        <%= link_to "delete", event_path(@event), data: { turbo_method: "delete", turbo_confirm: "click OK to delete event" }%>
+ 
     </p>
 </div>

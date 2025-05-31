@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = Event.find_by(params[:id])
   end
 
   def update
@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event
     else
-      redirect_to profile_path, notice: 'event has not been edited'
+      redirect_to profile_path(current_user), notice: 'event has not been edited'
     end
   end
 
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
                   else
                     'event not deleted'
                   end
-    redirect_to profile_path
+    redirect_to profile_path(current_user)
   end
 
   def create
@@ -37,6 +37,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         format.turbo_stream
+        redirect_to root_path
       else
         format.html do
           flash[:event_errors] = @event.errors.full_messages

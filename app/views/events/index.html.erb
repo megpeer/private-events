@@ -1,24 +1,17 @@
 <% if user_signed_in? %>
-   <div class="profile">
-        <%= current_user.username %> signed in
-    </div>
     <div>
         <h3>Create New Event:</h3>
         <%= render "form" %>
     </div>
+
     <div>
-        <h3>Upcoming Events:</h3>
-        <%= turbo_frame_tag "events" do %>
-        <%= render collection: @events.future_events, partial: "events/event" %>
-        <% end %>
+        <%= render "all_future" %>
     </div>
     
     <div>
-        <h3>Past Events</h3>
-        <%= turbo_frame_tag "events" do %>
-        <%= render collection: @events.past_events, partial: "events/event" %>
-        <% end %>
+        <%= render "all_past" %>
     </div>
-    <% else %>
-   :D
+    
+<% else %>
+   please log in :D
 <% end %>
