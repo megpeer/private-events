@@ -7,14 +7,13 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new(attendance_params)
     @attendance.save
     redirect_to profile_path(current_user)
-    flash.alert = 'you are now attending this event'
   end
 
   def destroy
     @attendance = Attendance.find_by(attendance_params)
     @attendance.destroy
     redirect_to profile_path(current_user)
-    flash.notice = 'you are no longer attending this event'
+    # flash.notice = 'you are no longer attending this event'
   end
 
   private
