@@ -5,15 +5,21 @@
         Host: @<%= @event.user.username %><br>
         Location: <%= @event.location %><br>
         Info: <%= @event.body %><br>
-        <%:authenticate_user!%>
-        <% if @event.user_id == current_user.id %>
-            <%= link_to "edit", edit_event_path %>
-            <%= link_to "delete", event_path(@event), data: { turbo_method: "delete", turbo_confirm: "click OK to delete event" }%>
-        <%# elsif !current_user.attended_events.include?(@event.id) %>
-            
-        <% else %>
-            <%= link_to "attend", create_attendance_path(:attendee_id=>current_user.id, :attended_event_id=>@event.id), data: { turbo_method: "post" }%>
-            <%= link_to "bail out", destroy_attendance_path(:attendee_id=>current_user.id, :attended_event_id=>@event.id), data: { turbo_method: "delete" }%>
+        <% if user_signed_in? %>
+            <% if @event.user_id == current_user.id %>
+                <%= link_to "edit", edit_event_path %>
+                <%= link_to "delete", event_path(@event), data: { turbo_method: "delete", turbo_confirm: "click OK to delete event" }%>
+    
+            <% elsif !current_user.attended_event_ids.include?(@event.id) %>
+                <%= link_to "attend", create_attendance_path(:attendee_id=>current_user.id, :attended_event_id=>@event.id), data: { turbo_method: "post" }%>
+
+            <% else current_user.attended_event_ids.include?(@event.id) %>
+                <%= link_to "bail out", destroy_attendance_path(:attendee_id=>current_user.id, :attended_event_id=>@event.id), data: { turbo_method: "delete" }%>
+            <% end %>
         <% end %>
     </p>
+    <p>Attending:<br>
+    <% @event.attendees.each do |attendee|%>
+    <%= attendee.username %><br>
+    <% end %>
 </div>
