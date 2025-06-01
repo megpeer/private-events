@@ -1,11 +1,101 @@
-.nav-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-decoration: none;
-    font-size: 20pt;
-    
+* {
+    /* border: 1px solid red; */
 }
+body {
+    
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    grid-template-rows: 40px, 40px, 5fr;
+}
+
+.messages {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    min-height: 50px;
+    padding: 5px;
+}
+
+.nav-container {
+    min-height: 50px; 
+    background-color: rgba(126, 126, 126, 0.476);
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
 .nav-item {
     text-decoration: none;
+    background-color: black;
+    color: grey;
+    font-size: 15pt;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-content {
+    margin: 1em;
+    padding: 5px;
+    background-color: rgba(126, 126, 126, 0.476);
+    border-radius: 10px;
+}
+.text-area {
+    width: 90%;
+}
+.save {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+
+}
+.all-events {
+    
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    column-gap: 1em;
+    padding: 5px;
+}
+.hosting-events {
+    grid-column: 1;
+}
+
+.upcoming-events {
+    grid-column: 2;
+}
+
+.past-events {
+    grid-column: 3;
+}
+
+.card-title {
+    background-color: black;
+    color: grey;
+    font-size: 15pt;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+
+    
+}
+.event {
+    color: rgb(41, 41, 41);
+    margin: 1em;
+    padding: 5px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: rgb(215, 215, 215);
+}
+.title {
+    text-decoration: none;
+    color: black;
 }

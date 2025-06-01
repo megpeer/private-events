@@ -1,15 +1,19 @@
 <% if user_signed_in? %>
-    <div>
-        <h3>Create New Event:</h3>
+    <div class="all-events">
+    <div class="card">
         <%= render "form" %>
     </div>
-
-    <div>
+    </div>
+    <div class="upcoming-events">
+    <div class="card">
         <%= render "all_future" %>
     </div>
-    
-    <div>
+    </div>
+    <div class="past-events">
+    <div class="card">
         <%= render "all_past" %>
+    </div>
+    </div>
     </div>
     
 <% else %>

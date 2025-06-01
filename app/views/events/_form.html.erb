@@ -1,7 +1,6 @@
 <%= form_with model: @event do |event| %>
     <% if event.object.errors.any? %>
-<div>
-    <p><%= pluralize(event.object.errors.count, "error") %></p>
+    <%= pluralize(event.object.errors.count, "error") %>
     the following errors have prohibited this event from being saved:<br>
     <ul>
         <%= event.object.errors.each do |error| %>
@@ -10,17 +9,14 @@
         </li>
         <% end %>
     </ul>
-
-    </p>
-    </div>
  <% end %>   
- <div>
-    <%= event.text_area :title, placeholder: "title" %><br>
+    <div class="card-title"><h3>Create new Event</h3></div>
+    <div class="form-content">
+    <%= event.text_area :title, placeholder: "title", class: "text-area" %><br>
     date: <%= event.date_field :date %><br>
-    <%= event.text_area :location, placeholder: "location" %><br>
+    <%= event.text_area :location, placeholder: "location", class: "text-area" %><br>
     
-    <%= event.text_area :body, placeholder: "message" %><br>
-    <%= event.submit "save event"%><br>
-<div>
+    <%= event.text_area :body, placeholder: "message", class: "text-area" %><br>
+    <%= event.submit "save event", class: "save"%><br>
 <% end %>
 

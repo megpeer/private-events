@@ -1,6 +1,7 @@
+<div class="card-title"><h3>Hosting</h3></div>
 <% @hosted_events.each do |event| %>
-  <p>
-      <strong><%= link_to event.title, event, data: {turbo_frame: "_top"} %></strong><br>
+  <p class="event">
+      <strong><%= link_to event.title, event, data: {turbo_frame: "_top"}, class: "title" %></strong><br>
       <%= event.date %><br>
       Location: <em><%= event.location %></em><br>
       <%=  event.body %><br>
