@@ -12,13 +12,19 @@ Event Manager was created for the [private events](https://www.theodinproject.co
 
 
 ## Usage
-[View Live](https:)
-![index view]()
+[View Live - coming soon!](https:)
 Index view
-![user events view]()
+
+![index view](https://raw.githubusercontent.com/megpeer/private-events/refs/heads/main/index.png)
+
+
 User Events View
-![event view]()
+![user events view](https://github.com/megpeer/private-events/blob/main/user_events.png)
+
 Event View
+![event view](https://raw.githubusercontent.com/megpeer/private-events/refs/heads/main/event.png)
+
+
 
 ## Potential Future Improvements
 
