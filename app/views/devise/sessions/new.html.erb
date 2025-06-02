@@ -1,5 +1,6 @@
-<h3>LOG IN</h3>
-
+<div class="card-title"><h3>LOG IN</h3></div>
+<div class="login-screen">
+<div class="event-closeup">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="field">
     <%= f.label :email %><br />
@@ -16,10 +17,16 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
+</div>
+  <div class= "event-closeup">
+    <div class="login-screen">
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "save" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
+</div>
