@@ -1,10 +1,10 @@
 
 
 # Event Manager
-Event Manager was created for the [private events](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) project from the Odin Project Rails curriculum. The purpose fo the project is for users to create events, and attend other user's events. With the ability to track user attendance to past and present events.
+Event Manager was created for the [private events](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) project from the Odin Project Rails curriculum. The purpose of the project is for users to create events, and attend other user's events. With the ability to track user attendance to past and present events.
 
 
-# Technologies used:
+# Technologies Used
 - Ruby version 3.4.4 
 - Rails Version 8.0
 - Devise Version 4.9.4
@@ -13,6 +13,7 @@ Event Manager was created for the [private events](https://www.theodinproject.co
 
 ## Usage
 [View Live - coming soon!](https:)
+
 Index view
 
 ![index view](https://raw.githubusercontent.com/megpeer/private-events/refs/heads/main/index.png)
