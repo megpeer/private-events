@@ -37,12 +37,12 @@ RUN apt-get update -qq && apt-get install -y libpq-dev
 COPY Gemfile Gemfile.lock ./
 
 # Install development tools + PostgreSQL if needed
-:contentReference[oaicite:2]{index=2} \
+RUN apt-get update -qq && apt-get install -y \
     build-essential \
     libpq-dev
-RUN bundle install && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
-    bundle exec bootsnap precompile --gemfile
+
+# Install gems
+RUN bundle install
 
 # Copy application code
 COPY . .
