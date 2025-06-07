@@ -40,6 +40,7 @@ COPY Gemfile Gemfile.lock ./
 RUN apt-get update -qq && apt-get install -y \
     build-essential \
     libpq-dev
+    libpq5
 
 # Install gems
 RUN bundle install
