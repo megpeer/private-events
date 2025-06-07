@@ -1,5 +1,5 @@
 [phases.setup]
-aptPkgs = ["libpq-dev", "libpq5"]
+apt = ["libpq-dev", "libpq5"]
 
 [phases.build]
 cmds = ["bundle install"]
