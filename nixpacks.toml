@@ -1,8 +1,8 @@
-[phases.setup]
-apt = ["libpq-dev", "libpq5"]
+[packages]
+apt = ["build-essential", "libpq-dev", "libpq5"]
 
 [phases.build]
 cmds = ["bundle install"]
 
 [start]
-cmd = "bundle exec rails server -b 0.0.0.0 -p ${PORT}
+cmd = "bundle exec rails server -b 0.0.0.0 -p ${PORT}"
